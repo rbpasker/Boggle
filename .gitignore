@@ -1,0 +1,5 @@
+__pycache__/
+data/quotes_cache.json
+data/history_cache.json
+snapshot_*.xlsx
+.ipynb_checkpoints/
