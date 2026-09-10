@@ -42,7 +42,7 @@ pd.set_option("display.float_format", lambda v: f"{v:,.2f}")
 
 BASE = Path.cwd()
 DATA = BASE / "data"
-RECIPIENTS = ["Beneficiary A", "Beneficiary B", "Beneficiary C"]
+RECIPIENTS = ["A", "H", "E"]
 DOD = pd.Timestamp("2025-12-07")
 """)
 
@@ -217,13 +217,13 @@ import matplotlib.dates as mdates
 plt.rcParams.update({"figure.dpi": 130, "font.size": 9, "axes.spines.top": False,
                      "axes.spines.right": False, "axes.grid": True, "grid.alpha": 0.25,
                      "grid.linewidth": 0.6, "axes.axisbelow": True})
-PAL = {"Beneficiary A": "#3d6b9c", "Beneficiary B": "#c07c3a", "Beneficiary C": "#2e7d5b"}
+PAL = {"A": "#3d6b9c", "H": "#c07c3a", "E": "#2e7d5b"}
 usd_k = lambda v, _=None: ("-" if v < 0 else "") + f"${abs(v)/1000:,.0f}k"
 
 # A and B hold equal 40% shares, so their curves coincide: B is drawn dashed to keep both visible.
-STYLE = {"Beneficiary A": dict(lw=2.0, ls="-"),
-         "Beneficiary B": dict(lw=1.4, ls=(0, (5, 2))),
-         "Beneficiary C": dict(lw=2.0, ls="-")}
+STYLE = {"A": dict(lw=2.0, ls="-"),
+         "H": dict(lw=1.4, ls=(0, (5, 2))),
+         "E": dict(lw=2.0, ls="-")}
 
 fig, ax = plt.subplots(figsize=(11, 4.4))
 for r in RECIPIENTS:

@@ -22,7 +22,7 @@ Every input is written to the audit CSV.  Run with uv:  uv run dod_prices.py ...
 
 Usage
     python3 dod_prices.py --csv holdings.csv --out dod_prices.csv
-        [--yahoo-out Beneficiary A_Yahoo_Portfolio.csv --recipient Beneficiary A]   # Yahoo portfolio import file
+        [--yahoo-out A_Yahoo_Portfolio.csv --recipient A]   # Yahoo portfolio import file
         [--xlsx distribution.xlsx]              # fill column V (DOD override)
 """
 import argparse, csv, json, ssl, sys, time, urllib.request, urllib.error
@@ -100,7 +100,7 @@ def main():
     ap.add_argument("--out", default="dod_prices.csv")
     ap.add_argument("--xlsx")
     ap.add_argument("--yahoo-out")
-    ap.add_argument("--recipient", default="Beneficiary A")
+    ap.add_argument("--recipient", default="A")
     ap.add_argument("--sleep", type=float, default=0.3)
     ap.add_argument("--cafile", help="CA bundle for HTTPS (proxy environments)")
     args = ap.parse_args()
